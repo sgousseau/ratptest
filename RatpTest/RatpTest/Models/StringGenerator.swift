@@ -8,56 +8,61 @@
 import Foundation
 
 
-extension UInt64 {
-  static var maxSquared: UInt64 {
-    return UInt64(sqrt(Double(UInt64.max)))
+extension Int {
+  static var maxSquared: Int {
+    return Int(sqrt(Double(Int.max)))
   }
 }
 
 struct StringGenerator {
   
+  typealias Parameters = (str1: String, str2: String, int1: Int, int2: Int, limit: Int)
+  
   enum StringGeneratorError: Error, Equatable {
     case limitTooLow
-    case parameterOverflow(value: UInt64, max: UInt64)
-    case indexOutOfRange(index: UInt64, limit: UInt64)
+    case parameterOverflow(value: Int, max: Int)
+    case indexOutOfRange(index: Int, limit: Int)
+    
+    var description: String {
+      switch self {
+      case .limitTooLow:
+        return "The given limit is too low"
+      case let .parameterOverflow(value: value, max: max):
+        return "The maximum possible value is \(max) but \(value) was given"
+      case let .indexOutOfRange(index: index, limit: limit):
+        return "The maximum index is \(limit - 1) but \(index) was given"
+      }
+    }
   }
   
-  let str1: String
-  let str2: String
-  let int1: UInt64
-  let int2: UInt64
-  let limit: UInt64
+  let parameters: Parameters
   
-  init(str1: String, str2: String, int1: UInt64, int2: UInt64, limit: UInt64) throws {
+  init(parameters: Parameters) throws {
     
-    let max = UInt64.maxSquared
+    let max = Int.maxSquared
     
-    guard int1 < max else {
-      throw StringGeneratorError.parameterOverflow(value: int1, max: max)
+    guard parameters.int1 < max else {
+      throw StringGeneratorError.parameterOverflow(value: parameters.int1, max: max)
     }
     
-    guard int2 < max else {
-      throw StringGeneratorError.parameterOverflow(value: int2, max: max)
+    guard parameters.int2 < max else {
+      throw StringGeneratorError.parameterOverflow(value: parameters.int2, max: max)
     }
     
-    guard (int1 * int2) <= limit else {
+    guard (parameters.int1 * parameters.int2) <= parameters.limit else {
       throw StringGeneratorError.limitTooLow
     }
     
-    self.str1 = str1
-    self.str2 = str2
-    self.int1 = int1
-    self.int2 = int2
-    self.limit = limit
+    self.parameters = parameters
   }
   
-  func get(at: UInt64) throws -> String {
-    guard at < limit else {
-      throw StringGeneratorError.indexOutOfRange(index: at, limit: limit)
+  func get(at: Int) throws -> String {
+    guard at < parameters.limit else {
+      throw StringGeneratorError.indexOutOfRange(index: at, limit: parameters.limit)
     }
     
     let n = at + 1
-    let result = (n.isMultiple(of: int1) ? str1 : "") + (n.isMultiple(of: int2) ? str2 : "")
+    let result = (n.isMultiple(of: parameters.int1) ? parameters.str1 : "") + (n.isMultiple(of: parameters.int2) ? parameters.str2 : "")
     
     return result.isEmpty ? "\(n)" : result
   }

@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Input View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RatpTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InputViewController" customModule="RatpTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +20,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fizz" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-Qf-xhg">
                                 <rect key="frame" x="77" y="97" width="260" height="34"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="str1Input_aid" label="First string input"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Ib5-2Z-A6x"/>
                                 </constraints>
@@ -29,9 +30,14 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade translate(0,20)"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="processInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="oJr-pI-21s"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Lev-xz-AZG"/>
+                                </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid string" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etd-Rh-unD">
-                                <rect key="frame" x="109.5" y="139" width="195" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid string" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Etd-Rh-unD">
+                                <rect key="frame" x="8" y="139" width="398" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="First string input error message"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,6 +47,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Str1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avp-4d-ZH2">
                                 <rect key="frame" x="186.5" y="60" width="41" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="First string"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,6 +61,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Buzz" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PA6-OA-ctI">
                                 <rect key="frame" x="77" y="205" width="260" height="34"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="str2Input_aid" label="Second string input"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Xba-9M-6i4"/>
                                 </constraints>
@@ -62,9 +70,13 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.1) fade translate(0,20)"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="processInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="HrK-vs-bGc"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ubK-pn-BPf"/>
+                                </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid string" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cve-fZ-4l8">
-                                <rect key="frame" x="109.5" y="247" width="195" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid string" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cve-fZ-4l8">
+                                <rect key="frame" x="8" y="247" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,6 +86,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Str2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwD-1w-GRe">
                                 <rect key="frame" x="185.5" y="168" width="43" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Second string"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,9 +96,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.9) fade translate(100)"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="97531" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BTT-F6-kTh">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BTT-F6-kTh">
                                 <rect key="frame" x="77" y="313" width="260" height="34"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="int1Input_aid" label="First integer input"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="f34-5n-nZ2"/>
                                 </constraints>
@@ -94,9 +108,14 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.2) fade translate(0,20)"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="processInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="cgE-mh-sAM"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IZs-AE-zLL"/>
+                                </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xd-TN-90l">
-                                <rect key="frame" x="102" y="355" width="210" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7xd-TN-90l">
+                                <rect key="frame" x="8" y="355" width="398" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="First integer input error message"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,6 +125,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pX-3r-cmw">
                                 <rect key="frame" x="188.5" y="276" width="37.5" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="First integer"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -115,9 +135,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(1) fade translate(100)"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="97533" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="75j-q2-oCg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="75j-q2-oCg">
                                 <rect key="frame" x="77" y="421" width="260" height="34"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="int2Input_aid" label="Second integer input"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Sch-Dk-zd9"/>
                                 </constraints>
@@ -126,9 +147,14 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.3) fade translate(0,20)"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="processInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="4Xy-mr-qoV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fhn-PH-SOT"/>
+                                </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPF-vu-CAn">
-                                <rect key="frame" x="102" y="463" width="210" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RPF-vu-CAn">
+                                <rect key="frame" x="8" y="463" width="398" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Second integer input error message"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -138,6 +164,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-Np-bds">
                                 <rect key="frame" x="187.5" y="384" width="39.5" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Second integer"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -147,9 +174,10 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(1.1) fade translate(100)"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9512491023" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-Tb-8Sg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-Tb-8Sg">
                                 <rect key="frame" x="77" y="529" width="260" height="34"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="limitInput_aid" label="Limit input"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="iJS-H3-cJ2"/>
                                 </constraints>
@@ -158,9 +186,14 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.4) fade translate(0,20)"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="processInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="fsy-cF-Xm8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nbH-VW-xws"/>
+                                </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-0i-c9A">
-                                <rect key="frame" x="102" y="571" width="210" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="no2-0i-c9A">
+                                <rect key="frame" x="8" y="571" width="398" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Limit input error message"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -170,6 +203,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3F-SQ-Y7j">
                                 <rect key="frame" x="182" y="492" width="50.5" height="29"/>
+                                <accessibility key="accessibilityConfiguration" label="Limit"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +215,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgt-Nn-6zo">
                                 <rect key="frame" x="151.5" y="780" width="111" height="58"/>
+                                <accessibility key="accessibilityConfiguration" identifier="goToDisplayButton_aid" label="Display list button"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
                                 <state key="normal" title="Display">
                                     <color key="titleColor" name="DarkOverWhite"/>
@@ -189,7 +224,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(1.5) fade translate(0,100)"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="JAU-gX-5Wi" kind="show" identifier="inputToDisplay" id="qs0-S5-alu"/>
+                                    <action selector="goToDisplay" destination="BYZ-38-t0r" eventType="touchUpInside" id="BU9-ET-XML"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,6 +232,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Etd-Rh-unD" firstAttribute="top" secondItem="VV1-Qf-xhg" secondAttribute="bottom" constant="8" symbolic="YES" id="0Kc-CS-2YT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cve-fZ-4l8" secondAttribute="trailing" constant="8" id="36j-cO-F4x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Etd-Rh-unD" secondAttribute="trailing" constant="8" id="3ZD-u6-oXh"/>
                             <constraint firstItem="PA6-OA-ctI" firstAttribute="top" secondItem="bwD-1w-GRe" secondAttribute="bottom" constant="8" symbolic="YES" id="44i-Ej-czt"/>
                             <constraint firstItem="Avp-4d-ZH2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="4zZ-vb-krq"/>
                             <constraint firstItem="bwD-1w-GRe" firstAttribute="top" secondItem="Etd-Rh-unD" secondAttribute="bottom" constant="8" symbolic="YES" id="604-MK-7xU"/>
@@ -204,6 +241,8 @@
                             <constraint firstItem="Cve-fZ-4l8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Ny-fg-lMx"/>
                             <constraint firstItem="pbO-Tb-8Sg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9i9-IF-na6"/>
                             <constraint firstItem="75j-q2-oCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9jF-c9-Mbm"/>
+                            <constraint firstItem="Cve-fZ-4l8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Ayx-NO-As3"/>
+                            <constraint firstItem="Etd-Rh-unD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Cbw-Qs-bN5"/>
                             <constraint firstItem="VV1-Qf-xhg" firstAttribute="centerX" secondItem="Avp-4d-ZH2" secondAttribute="centerX" id="Cly-cF-R6b"/>
                             <constraint firstItem="no2-0i-c9A" firstAttribute="top" secondItem="pbO-Tb-8Sg" secondAttribute="bottom" constant="8" symbolic="YES" id="GaE-le-FgA"/>
                             <constraint firstItem="Etd-Rh-unD" firstAttribute="centerX" secondItem="VV1-Qf-xhg" secondAttribute="centerX" id="IDW-AL-c3X"/>
@@ -217,16 +256,22 @@
                             <constraint firstItem="Tgt-Nn-6zo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OR8-md-Z4o"/>
                             <constraint firstItem="pbO-Tb-8Sg" firstAttribute="top" secondItem="T3F-SQ-Y7j" secondAttribute="bottom" constant="8" symbolic="YES" id="Og2-P0-cnr"/>
                             <constraint firstItem="7xd-TN-90l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QQ2-jC-mNE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="no2-0i-c9A" secondAttribute="trailing" constant="8" id="RVh-ZY-98K"/>
                             <constraint firstItem="4pX-3r-cmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rqe-oD-TE1"/>
                             <constraint firstItem="T3F-SQ-Y7j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Srz-Q0-xOE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7xd-TN-90l" secondAttribute="trailing" constant="8" id="WU3-ud-Kzr"/>
+                            <constraint firstItem="RPF-vu-CAn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="X6x-Wk-aHa"/>
                             <constraint firstItem="4pX-3r-cmw" firstAttribute="top" secondItem="Cve-fZ-4l8" secondAttribute="bottom" constant="8" symbolic="YES" id="bLj-YM-539"/>
                             <constraint firstItem="T3F-SQ-Y7j" firstAttribute="top" secondItem="RPF-vu-CAn" secondAttribute="bottom" constant="8" symbolic="YES" id="d2E-HS-N7p"/>
                             <constraint firstItem="BTT-F6-kTh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eRS-Lv-0TT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tgt-Nn-6zo" secondAttribute="bottom" constant="24" id="eTM-h7-wSX"/>
                             <constraint firstItem="U2k-Np-bds" firstAttribute="top" secondItem="7xd-TN-90l" secondAttribute="bottom" constant="8" symbolic="YES" id="g30-Pn-3QG"/>
                             <constraint firstItem="75j-q2-oCg" firstAttribute="top" secondItem="U2k-Np-bds" secondAttribute="bottom" constant="8" symbolic="YES" id="hr0-DK-yVL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RPF-vu-CAn" secondAttribute="trailing" constant="8" id="jAE-Pi-TCF"/>
                             <constraint firstItem="Cve-fZ-4l8" firstAttribute="top" secondItem="PA6-OA-ctI" secondAttribute="bottom" constant="8" symbolic="YES" id="kB9-dh-nzZ"/>
+                            <constraint firstItem="7xd-TN-90l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="r7G-8M-KSh"/>
                             <constraint firstItem="PA6-OA-ctI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sUr-0h-PCV"/>
+                            <constraint firstItem="no2-0i-c9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uQl-x9-PWN"/>
                             <constraint firstItem="RPF-vu-CAn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uYe-Qb-pSq"/>
                             <constraint firstItem="BTT-F6-kTh" firstAttribute="top" secondItem="4pX-3r-cmw" secondAttribute="bottom" constant="8" symbolic="YES" id="xPw-J3-3G1"/>
                         </constraints>
@@ -236,6 +281,19 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="int1ErrorLabel" destination="7xd-TN-90l" id="s6x-cu-zrr"/>
+                        <outlet property="int1TextField" destination="BTT-F6-kTh" id="TN6-s3-iRf"/>
+                        <outlet property="int2ErrorLabel" destination="RPF-vu-CAn" id="0fB-xW-Fj7"/>
+                        <outlet property="int2TextField" destination="75j-q2-oCg" id="4Vh-uE-NAk"/>
+                        <outlet property="limitErrorLabel" destination="no2-0i-c9A" id="btC-WE-Wav"/>
+                        <outlet property="limitTextField" destination="pbO-Tb-8Sg" id="yW0-df-G2V"/>
+                        <outlet property="str1ErrorLabel" destination="Etd-Rh-unD" id="J4q-Ly-Cbp"/>
+                        <outlet property="str1TextField" destination="VV1-Qf-xhg" id="loO-n2-1hM"/>
+                        <outlet property="str2ErrorLabel" destination="Cve-fZ-4l8" id="9sI-en-Ucm"/>
+                        <outlet property="str2TextField" destination="PA6-OA-ctI" id="JLt-46-Qgc"/>
+                        <segue destination="JAU-gX-5Wi" kind="show" identifier="inputToDisplay" id="jpf-HQ-Yts"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,6 +309,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xi-bB-DyH">
                                 <rect key="frame" x="146" y="92" width="122" height="28.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Parameter list"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
                                 <color key="textColor" name="DarkOverWhite"/>
                                 <nil key="highlightedColor"/>
@@ -260,18 +319,21 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fab-QM-ju3">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="17.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="First integer parameter"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" name="DarkOverWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnP-Rk-uGs">
                                         <rect key="frame" x="98" y="0.0" width="98" height="17.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="Second integer parameter"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" name="DarkOverWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-MU-uUZ">
                                         <rect key="frame" x="196" y="0.0" width="98" height="17.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="Limit parameter"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" name="DarkOverWhite"/>
                                         <nil key="highlightedColor"/>
@@ -283,15 +345,14 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fizz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIq-9h-wez">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="17.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="First string parameter"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" name="DarkOverWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="str1"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buzz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lz-2p-Gho">
                                         <rect key="frame" x="147" y="0.0" width="147" height="17.5"/>
+                                        <accessibility key="accessibilityConfiguration" label="Second string parameter"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                         <color key="textColor" name="DarkOverWhite"/>
                                         <nil key="highlightedColor"/>
@@ -303,34 +364,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" name="DarkOverWhite"/>
                                 <inset key="separatorInset" minX="60" minY="0.0" maxX="60" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="RnZ-wL-GBw" customClass="DisplayCell" customModule="RatpTest" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RnZ-wL-GBw" id="4xv-cY-sjk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fizz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00V-wd-khP">
-                                                    <rect key="frame" x="193" y="13" width="28" height="18.5"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                    <color key="textColor" name="DarkOverWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="00V-wd-khP" firstAttribute="centerX" secondItem="4xv-cY-sjk" secondAttribute="centerX" id="Zzf-C7-ePg"/>
-                                                <constraint firstItem="00V-wd-khP" firstAttribute="centerY" secondItem="4xv-cY-sjk" secondAttribute="centerY" id="trh-f7-0iw"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="label" destination="00V-wd-khP" id="hAt-ip-9fY"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JAU-gX-5Wi" id="AF4-vk-YSw"/>
+                                    <outlet property="delegate" destination="JAU-gX-5Wi" id="zeP-to-J9a"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2S-Vx-cn4">
                                 <rect key="frame" x="16" y="44" width="67" height="39"/>
+                                <accessibility key="accessibilityConfiguration" identifier="backToInputButton_aid" label="Back to input button"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
                                 <state key="normal" title="&lt; Input">
                                     <color key="titleColor" name="DarkOverWhite"/>
@@ -341,6 +382,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOS-Ap-c1k">
                                 <rect key="frame" x="326" y="44" width="68" height="39"/>
+                                <accessibility key="accessibilityConfiguration" identifier="goToStatsButton_aid" label="Go to stats button"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
                                 <color key="tintColor" name="DarkOverWhite"/>
                                 <state key="normal" title="Stats &gt;">
@@ -375,6 +417,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="7dx-5Y-VW8"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="int1Label" destination="Fab-QM-ju3" id="ydp-Ld-J84"/>
+                        <outlet property="int2Label" destination="XnP-Rk-uGs" id="HOa-ut-REo"/>
+                        <outlet property="limitLabel" destination="tfe-MU-uUZ" id="lEl-Dn-nC4"/>
+                        <outlet property="str1Label" destination="LIq-9h-wez" id="YQt-Dc-kHO"/>
+                        <outlet property="str2Label" destination="2lz-2p-Gho" id="moD-fi-sCS"/>
+                        <outlet property="tableView" destination="PyW-wK-0xA" id="TVf-wU-t9Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gA-e0-4p1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -388,9 +438,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-g3-kTQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLe-g3-kTQ">
                                 <rect key="frame" x="0.0" y="172" width="414" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" name="DarkOverWhite"/>
+                                <inset key="separatorInset" minX="60" minY="0.0" maxX="60" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="N6l-ak-UqG" customClass="StatCell" customModule="RatpTest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -421,6 +473,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="apc-Pv-DML" id="GIy-VS-3UA"/>
+                                    <outlet property="delegate" destination="apc-Pv-DML" id="mjD-Df-5FS"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most frequent requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brk-S9-sBr">
                                 <rect key="frame" x="79.5" y="92" width="255" height="29"/>
@@ -470,6 +526,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QhB-FG-Lo8"/>
+                    <connections>
+                        <outlet property="tableView" destination="aLe-g3-kTQ" id="2pc-S5-Fo2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFa-84-anw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
