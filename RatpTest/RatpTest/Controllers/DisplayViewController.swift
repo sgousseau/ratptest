@@ -7,11 +7,21 @@
 
 import UIKit
 
-class DisplayViewController: ViewController {
+typealias InputTuple = (str1: String, str2: String)
+
+class DisplayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      
+//      let inputToStatTag: (InputTuple) -> String = {
+//        return ""
+//      }
+      Stats.live.addStat("")
     }
+  
+  func inputToStat(input: InputTuple) -> String {
+    return ""
+  }
 }
