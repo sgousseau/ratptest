@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,13 @@
 		5CC1DE31258E8A7300096587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC1DE2F258E8A7300096587 /* LaunchScreen.storyboard */; };
 		5CC1DE3C258E8A7300096587 /* RatpTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE3B258E8A7300096587 /* RatpTestTests.swift */; };
 		5CC1DE47258E8A7300096587 /* RatpTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE46258E8A7300096587 /* RatpTestUITests.swift */; };
+		5CC1DE59258E8BB300096587 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC1DE58258E8BB300096587 /* Hero */; };
+		5CC1DE5E258E8BFD00096587 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE5D258E8BFD00096587 /* SplashScreenViewController.swift */; };
+		5CC1DE63258E8EE100096587 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE62258E8EE100096587 /* InputViewController.swift */; };
+		5CC1DE68258E8EEB00096587 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE67258E8EEB00096587 /* DisplayViewController.swift */; };
+		5CC1DE6D258E8EF400096587 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE6C258E8EF400096587 /* StatsViewController.swift */; };
+		5CC7E361258E94B5008514F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC7E360258E94B5008514F2 /* Constants.swift */; };
+		5CC7E367258EACAA008514F2 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC7E366258EACAA008514F2 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,12 @@
 		5CC1DE42258E8A7300096587 /* RatpTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatpTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC1DE46258E8A7300096587 /* RatpTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatpTestUITests.swift; sourceTree = "<group>"; };
 		5CC1DE48258E8A7300096587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CC1DE5D258E8BFD00096587 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		5CC1DE62258E8EE100096587 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		5CC1DE67258E8EEB00096587 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		5CC1DE6C258E8EF400096587 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		5CC7E360258E94B5008514F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5CC7E366258EACAA008514F2 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC1DE59258E8BB300096587 /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +113,13 @@
 		5CC1DE23258E8A7100096587 /* RatpTest */ = {
 			isa = PBXGroup;
 			children = (
+				5CC1DE32258E8A7300096587 /* Info.plist */,
+				5CC1DE2D258E8A7300096587 /* Assets.xcassets */,
 				5CC1DE24258E8A7100096587 /* AppDelegate.swift */,
 				5CC1DE26258E8A7100096587 /* SceneDelegate.swift */,
-				5CC1DE28258E8A7100096587 /* ViewController.swift */,
-				5CC1DE2A258E8A7100096587 /* Main.storyboard */,
-				5CC1DE2D258E8A7300096587 /* Assets.xcassets */,
-				5CC1DE2F258E8A7300096587 /* LaunchScreen.storyboard */,
-				5CC1DE32258E8A7300096587 /* Info.plist */,
+				5CC1DE74258E8F6F00096587 /* Models */,
+				5CC1DE73258E8F1A00096587 /* Views */,
+				5CC1DE71258E8EF900096587 /* Controllers */,
 			);
 			path = RatpTest;
 			sourceTree = "<group>";
@@ -128,6 +142,44 @@
 			path = RatpTestUITests;
 			sourceTree = "<group>";
 		};
+		5CC1DE71258E8EF900096587 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CC7E365258EAC81008514F2 /* Cells */,
+				5CC1DE28258E8A7100096587 /* ViewController.swift */,
+				5CC1DE5D258E8BFD00096587 /* SplashScreenViewController.swift */,
+				5CC1DE62258E8EE100096587 /* InputViewController.swift */,
+				5CC1DE67258E8EEB00096587 /* DisplayViewController.swift */,
+				5CC1DE6C258E8EF400096587 /* StatsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5CC1DE73258E8F1A00096587 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CC1DE2A258E8A7100096587 /* Main.storyboard */,
+				5CC1DE2F258E8A7300096587 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CC1DE74258E8F6F00096587 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CC7E360258E94B5008514F2 /* Constants.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CC7E365258EAC81008514F2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5CC7E366258EACAA008514F2 /* Cell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +196,9 @@
 			dependencies = (
 			);
 			name = RatpTest;
+			packageProductDependencies = (
+				5CC1DE58258E8BB300096587 /* Hero */,
+			);
 			productName = RatpTest;
 			productReference = 5CC1DE21258E8A7100096587 /* RatpTest.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +270,9 @@
 				Base,
 			);
 			mainGroup = 5CC1DE18258E8A7100096587;
+			packageReferences = (
+				5CC1DE57258E8BB300096587 /* XCRemoteSwiftPackageReference "Hero" */,
+			);
 			productRefGroup = 5CC1DE22258E8A7100096587 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +317,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC1DE29258E8A7100096587 /* ViewController.swift in Sources */,
+				5CC1DE68258E8EEB00096587 /* DisplayViewController.swift in Sources */,
+				5CC1DE63258E8EE100096587 /* InputViewController.swift in Sources */,
 				5CC1DE25258E8A7100096587 /* AppDelegate.swift in Sources */,
+				5CC1DE6D258E8EF400096587 /* StatsViewController.swift in Sources */,
+				5CC7E367258EACAA008514F2 /* Cell.swift in Sources */,
+				5CC1DE5E258E8BFD00096587 /* SplashScreenViewController.swift in Sources */,
 				5CC1DE27258E8A7100096587 /* SceneDelegate.swift in Sources */,
+				5CC7E361258E94B5008514F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -421,6 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -593,6 +659,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CC1DE57258E8BB300096587 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CC1DE58258E8BB300096587 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CC1DE57258E8BB300096587 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CC1DE19258E8A7100096587 /* Project object */;
 }
