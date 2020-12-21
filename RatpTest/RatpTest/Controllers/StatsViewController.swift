@@ -23,6 +23,9 @@ class StatsViewController: UIViewController {
     stats = statsService.getStats()
   }
   
+  deinit {
+    print("StatsViewController deinit")
+  }
 }
 
 extension StatsViewController: UITableViewDataSource {

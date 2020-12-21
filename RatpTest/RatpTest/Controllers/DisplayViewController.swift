@@ -41,6 +41,16 @@ class DisplayViewController: UIViewController {
     
     tableView.register(UINib(nibName: "DisplayCell", bundle: nil), forCellReuseIdentifier: DisplayCell.reuseIdentifier)
     tableView.tableFooterView = UIView()
+    
+    str1Label.text = generator.parameters.str1
+    str2Label.text = generator.parameters.str2
+    int1Label.text = "\(generator.parameters.int1)"
+    int2Label.text = "\(generator.parameters.int2)"
+    limitLabel.text = "\(generator.parameters.limit)"
+  }
+  
+  deinit {
+    print("DisplayViewController deinit")
   }
 }
 
