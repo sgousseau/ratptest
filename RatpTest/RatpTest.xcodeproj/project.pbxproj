@@ -27,6 +27,7 @@
 		5CC7E367258EACAA008514F2 /* DisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC7E366258EACAA008514F2 /* DisplayCell.swift */; };
 		5CECA2FA258FB373005FCD76 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECA2F9258FB373005FCD76 /* UIAlertController+Extensions.swift */; };
 		5CECA302258FD191005FCD76 /* DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CECA301258FD191005FCD76 /* DisplayCell.xib */; };
+		5CF1294E2590F3A4007E4969 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1294D2590F3A4007E4969 /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5CC7E366258EACAA008514F2 /* DisplayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCell.swift; sourceTree = "<group>"; };
 		5CECA2F9258FB373005FCD76 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		5CECA301258FD191005FCD76 /* DisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayCell.xib; sourceTree = "<group>"; };
+		5CF1294D2590F3A4007E4969 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,6 @@
 		5CC1DE23258E8A7100096587 /* RatpTest */ = {
 			isa = PBXGroup;
 			children = (
-				5CECA2F8258FB365005FCD76 /* Extensions */,
 				5CC1DE32258E8A7300096587 /* Info.plist */,
 				5CC1DE2D258E8A7300096587 /* Assets.xcassets */,
 				5CC1DE24258E8A7100096587 /* AppDelegate.swift */,
@@ -131,6 +132,7 @@
 				5CC1DE74258E8F6F00096587 /* Models */,
 				5CC1DE73258E8F1A00096587 /* Views */,
 				5CC1DE71258E8EF900096587 /* Controllers */,
+				5CECA2F8258FB365005FCD76 /* Extensions */,
 			);
 			path = RatpTest;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				5CECA2F9258FB373005FCD76 /* UIAlertController+Extensions.swift */,
+				5CF1294D2590F3A4007E4969 /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				5C9EC167258F8B28003EDD58 /* Stats.swift in Sources */,
 				5CC1DE63258E8EE100096587 /* InputViewController.swift in Sources */,
 				5CC1DE25258E8A7100096587 /* AppDelegate.swift in Sources */,
+				5CF1294E2590F3A4007E4969 /* Int+Extensions.swift in Sources */,
 				5C9EC16C258F8B91003EDD58 /* StringGenerator.swift in Sources */,
 				5CC1DE6D258E8EF400096587 /* StatsViewController.swift in Sources */,
 				5CC7E367258EACAA008514F2 /* DisplayCell.swift in Sources */,

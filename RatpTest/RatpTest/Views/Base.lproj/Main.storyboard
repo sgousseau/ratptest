@@ -230,6 +230,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="inputView_aid"/>
                         <constraints>
                             <constraint firstItem="Etd-Rh-unD" firstAttribute="top" secondItem="VV1-Qf-xhg" secondAttribute="bottom" constant="8" symbolic="YES" id="0Kc-CS-2YT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cve-fZ-4l8" secondAttribute="trailing" constant="8" id="36j-cO-F4x"/>
@@ -359,7 +360,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PyW-wK-0xA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PyW-wK-0xA">
                                 <rect key="frame" x="0.0" y="211.5" width="414" height="650.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" name="DarkOverWhite"/>
@@ -395,6 +396,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tHR-Wl-bet"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="displayView_aid"/>
                         <constraints>
                             <constraint firstItem="1Gg-kA-U7K" firstAttribute="leading" secondItem="tHR-Wl-bet" secondAttribute="leading" constant="60" id="Acp-c5-vxE"/>
                             <constraint firstItem="tHR-Wl-bet" firstAttribute="trailing" secondItem="1Gg-kA-U7K" secondAttribute="trailing" constant="60" id="Dbk-qL-Wtw"/>
@@ -510,6 +512,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6CV-xS-cdL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="statsView_aid"/>
                         <constraints>
                             <constraint firstItem="7Ih-hK-SAJ" firstAttribute="top" secondItem="6CV-xS-cdL" secondAttribute="top" id="4vA-H3-CBa"/>
                             <constraint firstItem="6CV-xS-cdL" firstAttribute="trailing" secondItem="JXE-YA-ozH" secondAttribute="trailing" constant="20" id="LQJ-S5-mbj"/>

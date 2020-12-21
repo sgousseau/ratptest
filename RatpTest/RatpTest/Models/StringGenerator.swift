@@ -8,11 +8,6 @@
 import Foundation
 
 
-extension Int {
-  static var maxSquared: Int {
-    return Int(sqrt(Double(Int.max)))
-  }
-}
 
 struct StringGenerator {
   
