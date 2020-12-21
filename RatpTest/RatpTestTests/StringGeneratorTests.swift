@@ -1,15 +1,15 @@
 //
-//  RatpTestTests.swift
+//  StringGeneratorTests.swift
 //  RatpTestTests
 //
-//  Created by Sébastien Gousseau on 19/12/2020.
+//  Created by Sébastien Gousseau on 21/12/2020.
 //
 
 import XCTest
 @testable import RatpTest
 
-class RatpTestTests: XCTestCase {
-  
+class StringGeneratorTests: XCTestCase {
+
   func testStringGeneratorBoundsErrors() throws {
     XCTAssertThrowsError(try StringGenerator(parameters: (str1: "", str2: "", int1: Int.maxSquared, int2: Int.maxSquared, limit: Int.max))) { error in
       XCTAssertEqual(error as! StringGenerator.StringGeneratorError, StringGenerator.StringGeneratorError.parameterOverflow(value: Int.maxSquared, max: Int.maxSquared))

@@ -41,7 +41,7 @@ class InputViewController: UIViewController {
   private var generator: StringGenerator?
   
   ///The stat service
-  private let statsService: Stats = .live
+  private let statsService: Stats = .live(storageKey: Stats.liveStorageKey)
   
   ///Function used to filter `value` as String input and eventually replace it with `errorString` if filter predicate doesn't match.
   func stringValidationError(_ value: String, _ errorString: String) -> String? {

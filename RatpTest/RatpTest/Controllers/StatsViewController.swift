@@ -12,7 +12,7 @@ class StatsViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
   
   ///The stat service
-  private let statsService: Stats = .live
+  private let statsService: Stats = .live(storageKey: Stats.liveStorageKey)
   
   private var stats = [Stats.Stat]()
   
@@ -40,7 +40,7 @@ extension StatsViewController: UITableViewDataSource {
     }
     
     cell.parameters = stats[indexPath.row].tag
-    cell.hits = stats[indexPath.row].hit
+    cell.hits = stats[indexPath.row].hits
     
     return cell
   }

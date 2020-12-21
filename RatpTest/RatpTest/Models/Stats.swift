@@ -10,12 +10,12 @@ import Foundation
 ///The stat service base interface
 struct Stats {
   
-  static let storageKey = "live_stats"
+  static let liveStorageKey = "live_stats"
   
   ///A stat object
   class Stat: Codable {
     let tag: String
-    var hit: Int = 1
+    var hits: Int = 1
     
     init(tag: String) {
       self.tag = tag
@@ -31,13 +31,13 @@ struct Stats {
 
 extension Stats {
   
-  ///A production implementatiojn of the Stat service using an inline implementation of UserDefaults storage.
+  ///A production implementatiojn of the Stat service using an inline implementation of UserDefaults storage with a dynamic key.
   ///TODO: refactor UserDefaults implementation with a Storage interface following the same principles
-  static let live: Stats = {
+  static func live(storageKey: String) -> Stats {
     
     let getStats: () -> [Stat] = {
       if
-        let statsData = UserDefaults.standard.data(forKey: Stats.storageKey),
+        let statsData = UserDefaults.standard.data(forKey: storageKey),
         let stats = try? JSONDecoder().decode([Stat].self, from: statsData) {
         return stats
       }
@@ -48,7 +48,7 @@ extension Stats {
       guard let data = try? JSONEncoder().encode(stats) else {
         return
       }
-      UserDefaults.standard.set(data, forKey: Stats.storageKey)
+      UserDefaults.standard.set(data, forKey: storageKey)
       UserDefaults.standard.synchronize()
     }
     
@@ -57,13 +57,13 @@ extension Stats {
     } addStat: { tag in
       var stats = getStats()
       if let stat = stats.first(where: { $0.tag == tag }) {
-        stat.hit += 1
+        stat.hits += 1
       } else {
         stats.append(Stat(tag: tag))
       }
       saveStats(stats)
     }
-  }()
+  }
   
   ///We can describe any implementation this way, constructing each functions as needed like for tests or anything
   static var mock: Stats = {

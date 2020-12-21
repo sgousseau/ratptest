@@ -16,7 +16,6 @@
 		5CC1DE2C258E8A7100096587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC1DE2A258E8A7100096587 /* Main.storyboard */; };
 		5CC1DE2E258E8A7300096587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC1DE2D258E8A7300096587 /* Assets.xcassets */; };
 		5CC1DE31258E8A7300096587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC1DE2F258E8A7300096587 /* LaunchScreen.storyboard */; };
-		5CC1DE3C258E8A7300096587 /* RatpTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE3B258E8A7300096587 /* RatpTestTests.swift */; };
 		5CC1DE47258E8A7300096587 /* RatpTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE46258E8A7300096587 /* RatpTestUITests.swift */; };
 		5CC1DE59258E8BB300096587 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC1DE58258E8BB300096587 /* Hero */; };
 		5CC1DE5E258E8BFD00096587 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1DE5D258E8BFD00096587 /* SplashScreenViewController.swift */; };
@@ -28,6 +27,9 @@
 		5CECA2FA258FB373005FCD76 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CECA2F9258FB373005FCD76 /* UIAlertController+Extensions.swift */; };
 		5CECA302258FD191005FCD76 /* DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CECA301258FD191005FCD76 /* DisplayCell.xib */; };
 		5CF1294E2590F3A4007E4969 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1294D2590F3A4007E4969 /* Int+Extensions.swift */; };
+		5CF1295625910C0D007E4969 /* StringGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1295525910C0D007E4969 /* StringGeneratorTests.swift */; };
+		5CF1295B25910C34007E4969 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1295A25910C34007E4969 /* DataSourceTests.swift */; };
+		5CF1296025910C80007E4969 /* StatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF1295F25910C80007E4969 /* StatsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 		5CC1DE30258E8A7300096587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CC1DE32258E8A7300096587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC1DE37258E8A7300096587 /* RatpTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatpTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CC1DE3B258E8A7300096587 /* RatpTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatpTestTests.swift; sourceTree = "<group>"; };
 		5CC1DE3D258E8A7300096587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CC1DE42258E8A7300096587 /* RatpTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RatpTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC1DE46258E8A7300096587 /* RatpTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatpTestUITests.swift; sourceTree = "<group>"; };
@@ -74,6 +75,9 @@
 		5CECA2F9258FB373005FCD76 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		5CECA301258FD191005FCD76 /* DisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayCell.xib; sourceTree = "<group>"; };
 		5CF1294D2590F3A4007E4969 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		5CF1295525910C0D007E4969 /* StringGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGeneratorTests.swift; sourceTree = "<group>"; };
+		5CF1295A25910C34007E4969 /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
+		5CF1295F25910C80007E4969 /* StatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +144,10 @@
 		5CC1DE3A258E8A7300096587 /* RatpTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				5CC1DE3B258E8A7300096587 /* RatpTestTests.swift */,
 				5CC1DE3D258E8A7300096587 /* Info.plist */,
+				5CF1295525910C0D007E4969 /* StringGeneratorTests.swift */,
+				5CF1295A25910C34007E4969 /* DataSourceTests.swift */,
+				5CF1295F25910C80007E4969 /* StatsTests.swift */,
 			);
 			path = RatpTestTests;
 			sourceTree = "<group>";
@@ -364,7 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC1DE3C258E8A7300096587 /* RatpTestTests.swift in Sources */,
+				5CF1295B25910C34007E4969 /* DataSourceTests.swift in Sources */,
+				5CF1296025910C80007E4969 /* StatsTests.swift in Sources */,
+				5CF1295625910C0D007E4969 /* StringGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

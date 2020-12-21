@@ -100,10 +100,12 @@ extension DisplayViewController {
     
     init(
       limit: Int,
+      minOffset: Int = 300,
       getItem: @escaping (Int) -> String?,
       onChange: @escaping () -> Void
     ) {
       self.limit = limit
+      self.minOffset = minOffset
       self.getItem = getItem
       self.onChange = onChange
       
