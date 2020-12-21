@@ -11,7 +11,9 @@ class StatsViewController: UIViewController {
   
   @IBOutlet private weak var tableView: UITableView!
   
+  ///The stat service
   private let statsService: Stats = .live
+  
   private var stats = [Stats.Stat]()
   
   override func viewDidLoad() {

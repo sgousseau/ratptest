@@ -43,14 +43,12 @@ class InputViewController: UIViewController {
   ///The stat service
   private let statsService: Stats = .live
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
-  
+  ///Function used to filter `value` as String input and eventually replace it with `errorString` if filter predicate doesn't match.
   func stringValidationError(_ value: String, _ errorString: String) -> String? {
     return value.isEmpty ? errorString : nil
   }
   
+  ///Function used to filter `value` as String input, convert it to Int and compare to `testValue`, eventually replace it with `errorString` if filter predicate doesn't match.
   func integerValidationError(_ value: String, _ testValue: Int, _ errorString: String) -> String? {
     if let value = Int(value) {
       return value < testValue ? nil : errorString
@@ -59,6 +57,7 @@ class InputViewController: UIViewController {
     }
   }
   
+  ///Function binded to `UITextField.editingDidChange` via Storyboard. Used to process input values and errors
   @IBAction
   func processInput(_ textField: UITextField) {
     let str = textField.text ?? ""
@@ -75,6 +74,7 @@ class InputViewController: UIViewController {
     inputErrorPairs[textField]?.isHidden = inputErrorPairs[textField]?.text == nil
   }
   
+  ///Returns a StringGenerator object if initialization suceed, nil otherwise and raise an alert
   func makeStringGenerator(parameters: StringGenerator.Parameters) -> StringGenerator? {
     do {
       let generator = try StringGenerator(parameters: parameters)
@@ -88,6 +88,7 @@ class InputViewController: UIViewController {
     return nil
   }
   
+  ///Returns a `StringGenerator.Parameters` object if initialization suceed, nil otherwise.
   func getStringGeneratorParameters() -> StringGenerator.Parameters? {
     guard
       let str1 = str1TextField.text,
@@ -101,10 +102,12 @@ class InputViewController: UIViewController {
     return (str1: str1, str2: str2, int1: int1, int2: int2, limit: limit)
   }
   
+  ///Converts a `StringGenerator.Parameters` tuple to a readable string value used as a tag
   func inputToStat(input: StringGenerator.Parameters) -> String {
     return "\(input.str1)\(input.str2) (\(input.int1), \(input.int2), \(input.limit))"
   }
   
+  ///Route to the display list screen. It prepares the `StringGenerator` object as well as processing the stat hits before requesting the corresponding `UIStoryboardSegue`
   @IBAction func goToDisplay() {
     if
       let parameters = getStringGeneratorParameters(),
@@ -118,6 +121,7 @@ class InputViewController: UIViewController {
     }
   }
   
+  ///Configure the display list screen before presentation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //Inputs have been filtered so it's not possible to get here with wrong values
     if
@@ -130,11 +134,13 @@ class InputViewController: UIViewController {
 
 extension InputViewController: UITextFieldDelegate {
   
+  ///Called when user hits the cross button
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
     processInput(textField)
     return true
   }
   
+  ///Called when user hits the keyboard return button, we tabulate to other field or validate
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     switch textField {
     case str1TextField:

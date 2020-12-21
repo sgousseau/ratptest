@@ -7,10 +7,12 @@
 
 import Foundation
 
+///The stat service base interface
 struct Stats {
   
   static let storageKey = "live_stats"
   
+  ///A stat object
   class Stat: Codable {
     let tag: String
     var hit: Int = 1
@@ -20,12 +22,17 @@ struct Stats {
     }
   }
   
+  ///Get all stats
   var getStats: () -> [Stat]
+  
+  ///Adds a stat
   var addStat: (String) -> Void
 }
 
 extension Stats {
   
+  ///A production implementatiojn of the Stat service using an inline implementation of UserDefaults storage.
+  ///TODO: refactor UserDefaults implementation with a Storage interface following the same principles
   static let live: Stats = {
     
     let getStats: () -> [Stat] = {
@@ -58,7 +65,7 @@ extension Stats {
     }
   }()
   
-  ///We can describe any implementation this way, constructing each functions as needed here
+  ///We can describe any implementation this way, constructing each functions as needed like for tests or anything
   static var mock: Stats = {
     return Stats(
       getStats: {

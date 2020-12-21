@@ -8,11 +8,13 @@
 import Foundation
 
 
-
+///The object used to compute strings as described by the given algorithm of known `FizzBuzz`
 struct StringGenerator {
   
+  ///A tuple wrapper for all parameters used in calculations
   typealias Parameters = (str1: String, str2: String, int1: Int, int2: Int, limit: Int)
   
+  ///All handled errors
   enum StringGeneratorError: Error, Equatable {
     case limitTooLow
     case parameterOverflow(value: Int, max: Int)
@@ -30,8 +32,10 @@ struct StringGenerator {
     }
   }
   
+  ///The parameters wrapper object
   let parameters: Parameters
   
+  ///At init, we check if integers are in authorized range of  `0..< Int.maxSquared` for simplicity. We additionally check if the limit is greater than our multipled integer parameters. Throws otherwise
   init(parameters: Parameters) throws {
     
     let max = Int.maxSquared
@@ -51,6 +55,7 @@ struct StringGenerator {
     self.parameters = parameters
   }
   
+  ///Get is the generation method. Instead of generating the full list of possible strings at init we generates it dynamically with this method. Yolu pass the index `at: Int` and you get the result. Therefore, if you want to fill an array from 0 to limit, you have to DIY.
   func get(at: Int) throws -> String {
     guard at < parameters.limit else {
       throw StringGeneratorError.indexOutOfRange(index: at, limit: parameters.limit)
